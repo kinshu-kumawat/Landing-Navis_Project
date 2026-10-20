@@ -1,0 +1,798 @@
+@font-face {
+    font-family: face;
+    src: url(./sf-pro-display_bold.woff2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    background-color: rgb(247, 247, 250);
+    font-family: face, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+#main {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    background-color: rgb(247, 247, 250);
+}
+
+
+#box1 {
+    width: 100%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "header header"
+        "aside section2"
+        "footer footer";
+    gap: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    grid-area: header;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px clamp(20px, 5vw, 60px);
+    width: 100%;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.logo-container {
+    display: contents;
+}
+
+.icon {
+    order: 1;
+    background-color: #0066FF; 
+    width: 32px;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-shape {
+    width: 10px;
+    height: 20px;
+    background-color: white;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    opacity: 1;
+    margin-left: -5px;
+    transform: rotate(160deg);
+}
+
+.icon-shape:nth-child(2) {
+    opacity: 0.8;
+}
+
+.icon-shape:nth-child(3) {
+    opacity: 0.5;
+}
+
+header > h4 {
+    order: 2;
+    font-family: face, -apple-system, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0066FF;
+    margin-left: 10px;
+    margin-right: auto;
+    padding: 0;
+}
+
+.text {
+    order: 3;
+    color: #1e293b;
+    font-family: face, -apple-system, sans-serif;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.text > p {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.text > p:hover {
+    color: #0066FF;
+}
+
+.but {
+    order: 4;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.but > button {
+    background-color: white;
+    color: #1e293b;
+    border-radius: 30px;
+    padding: 8px 20px;
+    border: 1.5px solid #0066FF;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    width: auto;
+    white-space: nowrap;
+}
+
+.but > button:hover {
+    color: white;  
+    background-color: #0066FF;
+    border-color: #0066FF;
+}
+
+/* Aside: Hero Headline & CTA */
+#box1 > aside {
+    grid-area: aside;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(30px, 5vw, 70px) clamp(20px, 5vw, 60px);
+}
+
+#box1 > aside > h4 {
+    font-family: face, -apple-system, sans-serif;
+    font-size: clamp(32px, 4.2vw, 54px);
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    padding: 0;
+    text-align: left;
+}
+
+#box1 > aside > p {
+    font-family: face, -apple-system, sans-serif;
+    font-size: clamp(14px, 1.6vw, 16px);
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    text-align: left;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    background: transparent;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 28px;
+    font-size: 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    transition: all 0.25s ease;
+    width: auto;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: #0066FF;
+    color: white;
+    border: 2px solid #0066FF;
+}
+
+.btn-primary:hover {
+    background-color: #0052cc;
+    border-color: #0052cc;
+}
+
+.btn-outline {
+    background-color: white;
+    color: #0066FF;
+    border: 2px solid #0066FF;
+}
+
+.btn-outline:hover {
+    background-color: #0066FF;
+    color: white;
+}
+
+
+#box1 > section {
+    grid-area: section2;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(20px, 4vw, 50px);
+}
+
+#box1 > section > img {
+    width: 100%;
+    max-width: 580px;
+    height: auto;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+#box1 > footer {
+    grid-area: footer;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 35px clamp(20px, 5vw, 60px);
+    border-top: 1px solid #f1f5f9;
+    text-align: center;
+}
+
+#box1 > footer > div > h4 {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+    font-family: face, -apple-system, sans-serif;
+}
+
+#box1 > footer > div > p {
+    font-size: clamp(12px, 1.4vw, 14px);
+    color: #64748b;
+    margin: 0;
+    line-height: 1.4;
+    font-family: face, -apple-system, sans-serif;
+}
+
+
+#box2 {
+    width: 100%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "figure section";
+    padding: clamp(40px, 6vw, 80px) clamp(20px, 5vw, 60px);
+    gap: clamp(30px, 5vw, 60px);
+    align-items: center;
+    margin-top: 20px;
+}
+
+#box2 > figure {
+    grid-area: figure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box2 > figure > img {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+#box2 > section {
+    grid-area: section;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#box2 > section > button.but {
+    background-color: whitesmoke;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-bottom: 20px;
+    width: auto;
+    height: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box2 > section > button.but:hover {
+    border-color: #0066FF;
+    background-color: #0066FF;
+    color: white;
+}
+
+#box2 > section > h4 {
+    font-family: face, -apple-system, sans-serif;
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+#box2 > section > p {
+    font-family: face, -apple-system, sans-serif;
+    font-size: clamp(14px, 1.8vw, 16px);
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+#box2 .para {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#box2 .features {
+    display: flex;
+    gap: clamp(20px, 4vw, 50px);
+    flex-wrap: wrap;
+}
+
+#box2 .column {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#box2 .column li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: clamp(13px, 1.6vw, 15px);
+    color: #0066FF;
+    font-weight: 500;
+}
+
+#box2 .check {
+    color: #0066FF;
+    font-size: 16px;
+    margin-right: 6px;
+}
+
+
+#box3 {
+    width: 100%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.9fr;
+    grid-template-areas: "figure aside section";
+    gap: 20px;
+    padding: clamp(40px, 6vw, 70px) clamp(20px, 4vw, 50px);
+    align-items: center;
+    margin-top: 20px;
+}
+
+#box3 > figure {
+    grid-area: figure;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+#box3 > figure > img {
+    width: 100%;
+    height: clamp(150px, 18vw, 220px);
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+#box3 > aside {
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#box3 > aside > button {
+    background-color: whitesmoke;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    padding: 8px 26px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-bottom: 20px;
+    width: auto;
+    height: auto;
+}
+
+#box3 > aside > button:hover {
+    background-color: #0066FF;
+    border-color: #0066FF;
+    color: white;
+}
+
+#box3 > aside > h4 { 
+    font-family: face, -apple-system, sans-serif;
+    font-size: clamp(28px, 3.8vw, 44px);
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+#box3 > aside > p {
+    font-family: face, -apple-system, sans-serif;
+    font-size: clamp(13px, 1.6vw, 15px);
+    color: #64748b;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+}
+
+#box3 > section {
+    grid-area: section;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#box3 > section > img {
+    width: 100%;
+    height: clamp(150px, 18vw, 220px);
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+#box4 {
+    width: 100%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "figure section";
+    gap: clamp(30px, 5vw, 60px);
+    padding: clamp(40px, 6vw, 80px) clamp(20px, 5vw, 60px);
+    align-items: center;
+    margin-top: 20px;
+}
+
+#box4 > figure {
+    grid-area: figure;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#box4 > figure > button {
+    background-color: whitesmoke;
+    border: 1px solid #cbd5e1;
+    color: #1e293b;
+    border-radius: 30px;
+    padding: 6px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    width: auto;
+    height: auto;
+}
+
+#box4 > figure > h3 {
+    font-family: face, -apple-system, sans-serif;
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+#box4 > figure > p {
+    font-family: face, -apple-system, sans-serif;
+    font-size: clamp(14px, 1.8vw, 15px);
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+#box4 > figure > h4 {
+    font-family: face, -apple-system, sans-serif;
+    font-size: clamp(18px, 2.2vw, 22px);
+    font-weight: 700;
+    color: #0066FF;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+#box4 > section {
+    grid-area: section;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box4 > section > img,
+#box4 > section > IMG {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================
+   SECTION 5: FOOTER (#box5)
+   ========================================================== */
+#box5 {
+    width: 100%;
+    background-color: #0b0f19;
+    color: white;
+    padding: clamp(40px, 6vw, 70px) clamp(20px, 5vw, 60px);
+    border-radius: 24px;
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "brand links connect dev"
+        "social links connect dev";
+    row-gap: 15px;
+    column-gap: 30px;
+}
+
+#box5 > h5 {
+    grid-area: brand;
+    color: white;
+    font-family: face, -apple-system, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+#box5 > .logo {
+    grid-area: social;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+#box5 > .logo p i {
+    font-size: 20px;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#box5 > .logo p i:hover {
+    color: #0066FF;
+}
+
+#box5 > .class {
+    grid-area: links;
+}
+
+#box5 > .class2 {
+    grid-area: connect;
+}
+
+#box5 > .class3 {
+    grid-area: dev;
+}
+
+#box5 h4 {
+    color: white;
+    font-family: face, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+#box5 p {
+    color: #94a3b8;
+    font-family: face, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 2;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    margin: 0;
+}
+
+#box5 p:hover {
+    color: white;
+}
+
+
+@media (max-width: 992px) {
+    header {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .text {
+        order: 4;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        padding-top: 10px;
+        border-top: 1px solid #f1f5f9;
+    }
+
+    .but {
+        order: 3;
+    }
+
+    #box1 > footer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    #box3 {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "aside aside"
+            "figure section";
+        gap: 25px;
+    }
+
+    #box5 {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "brand brand"
+            "social social"
+            "links connect"
+            "dev dev";
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #box1 {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "aside"
+            "section2"
+            "footer";
+    }
+
+    #box1 > aside {
+        align-items: flex-start;
+        padding: 30px 20px;
+    }
+
+    #box1 > section {
+        padding: 20px;
+    }
+
+    #box1 > footer {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px 20px;
+    }
+
+
+    #box2 {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "figure"
+            "section";
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+
+    #box3 {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "aside"
+            "figure"
+            "section";
+        padding: 40px 20px;
+        gap: 25px;
+    }
+
+    #box3 > figure {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #box3 > section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    #box4 {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "figure"
+            "section";
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+    #box5 {
+        border-radius: 16px;
+        padding: 35px 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .text {
+        overflow-x: auto;
+        white-space: nowrap;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+    }
+
+    .but > button {
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+
+    .button .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    #box1 > footer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #box2 .features {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #box5 {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "brand"
+            "social"
+            "links"
+            "connect"
+            "dev";
+        gap: 20px;
+    }
+}
